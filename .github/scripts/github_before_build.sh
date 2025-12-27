@@ -20,7 +20,8 @@ fi
 
 cp "$_main_repo/flags.gn" "$_src_dir/out/Default/args.gn"
 cat "$_root_dir/flags.macos.gn" >> "$_src_dir/out/Default/args.gn"
-echo 'cc_wrapper="sccache"' >> "$_src_dir/out/Default/args.gn"
+# HELIUM FORK: Disabled sccache - requires GHA cache config not present in forked repos
+# echo 'cc_wrapper="sccache"' >> "$_src_dir/out/Default/args.gn"
 
 if ! [ -z "${PROD_MACOS_SPARKLE_ED_PUB_KEY-}" ]; then
   echo 'enable_sparkle=true' >> "$_src_dir/out/Default/args.gn"
